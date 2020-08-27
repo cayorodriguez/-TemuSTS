@@ -47,21 +47,33 @@ Options:
                         target directory
 
 -u UMBRAL, --umbral=UMBRAL
-                        similarity threshold (default 0.3)
+                        similarity threshold (default 93, for jaccard use 0.3)
 
 -r REDACT, --redact=REDACT
                         do not write target sentences
 
 </pre>
 ## Ejemplo:
+For a comparison between a 1000 documents vs 981 documents directories:
 
+
+### Using Fuzzy Search
 <pre>
+
 python TemuSTS.py -s /home/crodri/BSC/similitud_cc/corpus_casos_clinicos/radioccc/ -t /home/crodri/BSC/similitud_cc/corpus_casos_clinicos/oncoccc/ -o radioccc_vs_oncoccc.tsv
 
 (...)
 processed  in 1046.357162952423 seconds 17.439286049207052 minutes or 0.2906547674867842 hours using fuzzy
+</pre>
+
+### Using jaccard
+<pre>
+
 
 </pre>
+
+
+
 
 La salida es un archivo TSV con información sobre los archivos y los siguientes campos:
 
