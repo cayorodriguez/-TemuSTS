@@ -69,6 +69,11 @@ processed  in 1046.357162952423 seconds 17.439286049207052 minutes or 0.29065476
 ### Using jaccard
 <pre>
 
+python TemuSTS.py -s /home/crodri/BSC/similitud_cc/corpus_casos_clinicos/radioccc/ -t /home/crodri/BSC/similitud_cc/corpus_casos_clinicos/oncoccc/ -o radioccc_vs_oncoccc_jaccard.tsv -m jaccard
+
+
+(...)
+
 
 </pre>
 
