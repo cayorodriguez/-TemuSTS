@@ -1,4 +1,4 @@
-# -TemuSTS
+# TemuSTS
 ##  Semantic Text Similarity for TEMU projects
 
 Programa de análisis de frases similares en dos corpus. Se utiliza el indice Jaccard que compara las oraciones de manera simple como un problema de comparacion de conjuntos de palabras.
@@ -66,5 +66,5 @@ processed  in 1046.357162952423 seconds 17.439286049207052 minutes or 0.29065476
 La salida es un archivo TSV con información sobre los archivos y los siguientes campos:
 
 
-
+![Salida de STS](https://github.com/cayorodriguez/-TemuSTS/blob/master/ejemplo.png)
 
