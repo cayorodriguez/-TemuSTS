@@ -41,7 +41,7 @@ Options:
 
 -m METHOD, --method=METHOD
                         Comparison method (jaccard, fuzzy [default]) Fuzzy is
-                        way faster
+                         faster most of the times
 
 -t TARGET, --target=TARGET
                         target directory
@@ -73,7 +73,7 @@ python TemuSTS.py -s /home/crodri/BSC/similitud_cc/corpus_casos_clinicos/radiocc
 
 
 (...)
-
+processed  in 598.6335144042969 seconds 9.977225240071615 minutes or 0.1662870873345269 hours using jaccard
 
 </pre>
 
