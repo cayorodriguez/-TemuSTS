@@ -153,7 +153,10 @@ def main(argv=None):
     t1 = time.time()
     #print("*",type(options.cluster_num))
     if options.source:
-        parrafos1, statssource = generateSourceSentences(options.source)
+        if options.method == 'fuzzy':
+            parrafos1, statssource = generateSourceSentences(options.source)
+        else:
+            parrafos1, statssource = generateSentences(options.source)
         parrafos2, statstarget = generateSentences(options.target)
         print("Initiating Comparison ...")
         if options.redact:
