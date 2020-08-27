@@ -56,7 +56,7 @@ def generateSourceSentences(dirin):
     all_sents = 0
     all_toks = 0
     doc_number = len(filesin)
-    from collections import OrderedDict
+    #from collections import OrderedDict
     for x in filesin:
         print(dirin+x)
         txt = open(dirin+x).read().strip()
@@ -94,7 +94,7 @@ def fuzzy(allterms,sentence,cutoff=93):
         return None
 
 def similitud(parrafos,sentence):
-    from operator import itemgetter
+    #from operator import itemgetter
     sim = {}
     for k in parrafos.keys():
         source = parrafos[k]
@@ -118,7 +118,7 @@ def compareAndWrite(parrafos1,parrafos2,umbral,method,redact=None):
         if method == 'fuzzy':
             top = fuzzy(allterms,sentence,93)
         elif method == 'jaccard':
-            top = similitud(allterms,sentence)
+            top = similitud(parrafos1,sentence)
         if top:
             if top[-1] > umbral:
                 if redact:
@@ -145,16 +145,17 @@ def main(argv=None):
     parser.add_option("-o", "--fileout", dest="fileout", help="output file, tab-separated values extension (.tsv)",default="compared.tsv")
     parser.add_option("-m", "--method", dest="method", help="Comparison method (jaccard, fuzzy [default]) Fuzzy is way faster",default="fuzzy")
     parser.add_option("-t", "--target", dest="target", help="target directory")
-    parser.add_option("-u", "--umbral", dest="umbral", help="similarity threshold (default 0.3)",type="float", default=0.3)
+    parser.add_option("-u", "--umbral", dest="umbral", help="similarity threshold (default 93, for jaccard use 0.3 or higher)",type="float", default=93)
     parser.add_option("-r", "--redact", dest="redact", help="do not write target sentences", default=None)
     (options, args) = parser.parse_args(argv)
-    print("Initiating Comparison ...")
+    
     import time
     t1 = time.time()
     #print("*",type(options.cluster_num))
     if options.source:
         parrafos1, statssource = generateSourceSentences(options.source)
         parrafos2, statstarget = generateSentences(options.target)
+        print("Initiating Comparison ...")
         if options.redact:
             similares = compareAndWrite(parrafos1,parrafos2,options.umbral,options.method,options.redact)
         else:
@@ -164,6 +165,7 @@ def main(argv=None):
         else:
             writeOut(options.target,similares,statstarget,options.method,"compared.tsv")
     else:
+        print("Initiating Comparison ...")
         if not options.target:
             print("Need arguments. use python similituds_cc.py --help")
         else:
