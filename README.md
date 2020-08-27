@@ -53,6 +53,15 @@ Options:
                         do not write target sentences
 
 </pre>
+## Ejemplo:
+
+<pre>
+python TemuSTS.py -s /home/crodri/BSC/similitud_cc/corpus_casos_clinicos/radioccc/ -t /home/crodri/BSC/similitud_cc/corpus_casos_clinicos/oncoccc/ -o radioccc_vs_oncoccc.tsv
+
+(...)
+processed  in 1046.357162952423 seconds 17.439286049207052 minutes or 0.2906547674867842 hours using fuzzy
+
+</pre>
 
 La salida es un archivo TSV con información sobre los archivos y los siguientes campos:
 
