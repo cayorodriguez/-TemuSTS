@@ -1,13 +1,18 @@
 # -TemuSTS
 ##  Semantic Text Similarity for TEMU projects
+
 Programa de análisis de frases similares en dos corpus. Se utiliza el indice Jaccard que compara las oraciones de manera simple como un problema de comparacion de conjuntos de palabras.
 
 ## Dependencias de python:
 
 spacy == 2.2.4
+
 numpy == 1.18.1
+
 rapidfuzz == 0.10.0
+
 spacy, con el modelo para español es_core_news_md"
+
 python -m spacy download es_core_news_md
 
 
